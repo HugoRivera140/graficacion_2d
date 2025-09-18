@@ -36,6 +36,8 @@ void draw_figura(Figuras *fig){
             draw_circle(32,c.pos.unpack.x+c.w,c.pos.unpack.y,5.f,0x0000ffff);
             draw_circle(32,c.pos.unpack.x+c.w,c.pos.unpack.y+c.h,5.f,0x0000ffff);
             draw_circle(32,c.pos.unpack.x,c.pos.unpack.y+c.h,5.f,0x0000ffff);
+
+            fill_cuadro(&c, c.color.hex);
         }
         break;
 
@@ -48,13 +50,15 @@ void draw_figura(Figuras *fig){
             draw_circle(32,t.p3.unpack.x,t.p3.unpack.y,5.f,0x0000ffff);
             draw_triangle(t.p1.unpack.x, t.p1.unpack.y, t.p2.unpack.x, t.p2.unpack.y,t.p3.unpack.x, t.p3.unpack.y, t.color.hex);
 
-            fillTriangle(t);
+            fillTriangle(&t, t.color.hex);
         }
         break;
 
         case CIRC:{
             Circulo c = fig->circulo;
             draw_circle_points(c.r,c.pos.unpack.x,c.pos.unpack.y,c.color.hex);
+
+            fill_circulo(&c, c.color.hex);
         }
         break;
     }

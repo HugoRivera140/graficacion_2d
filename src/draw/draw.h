@@ -10,4 +10,8 @@ void draw_rectangle(int x0, int y0, int w, int h, uint32_t color);
 void draw_circle(int numvert, int x0, int y0, int radio, uint32_t color);
 void draw_circle_points(int r, int xc, int yc, uint32_t color);
 
-void fillTriangle(Triangulo triangulo);
+void fillTriangle(Triangulo *triangulo, uint32_t color);
+void fill_triangulo(Triangulo *triangulo, uint32_t color);
+void fill_cuadro(Cuadro *cuadro, uint32_t color);
+void fill_circulo(Circulo *circulo, uint32_t color);
+void fill_figura(void *figura, uint32_t fill_color);

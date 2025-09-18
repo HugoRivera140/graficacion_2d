@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include  <assert.h>
+#include <assert.h>
 
 #include "global.h"
 #include "render.h"
 #include "memoria/memoria.h"
+#include "draw/linea.h"
 
 #define FPS 60
 #define FRAME_TARGET_TIME (1000/FPS)
@@ -45,21 +46,9 @@ int main(int argc, char** argv){
 
 		// update();
 
-        // updateLinea();
-        // updateDDA();
-        // updateBressenham();
-
-        // updateRectangle();
-        // updateTriangle();
-        // updateCircle();
-        // updateCirclePoints();
-
-        // updateCurva();
         updateFiguras();
 
-		// pattern1(10,10);
-		// pattern2(10);
-		// pattern3(10,10);
+
 
         if(grabar){
             grabar_imagen();

@@ -3,6 +3,7 @@
 #include <SDL3/SDL.h>
 #include "color/colores.h"
 #include "draw/figuras.h"
+#include "GUI/boton.h"
 
 typedef struct _estado
 {
@@ -15,6 +16,7 @@ typedef struct _estado
     int ven_height;
     int run;
     Figuras *figuras_buffer;
+    Button *botones_buffer;
 }EstadosRender;
 
 extern EstadosRender estadosrender;
