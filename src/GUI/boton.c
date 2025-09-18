@@ -15,34 +15,6 @@ void draw_boton(Button *button){
     draw_figura(&(button -> label));
 }
 
-// void eventListener(Button *button){    
-//     if(estadosrender.evento.motion.x >= button -> x &&
-//         estadosrender.evento.motion.x <= (button -> x + button -> width) &&
-//         estadosrender.evento.motion.y >= button -> y &&
-//         estadosrender.evento.motion.y <= (button -> y + button -> height) &&
-//         estadosrender.evento.type == SDL_EVENT_MOUSE_BUTTON_DOWN){    
-        
-//         switch(button -> label.data.type){
-//             case CUADRO:                
-//                 printf("Boton1 encontrado...\n");
-//                 Figuras *prueba = createCuad();
-
-//                 pushto_array(estadosrender.figuras_buffer, *prueba);
-//                 break;
-//             case CIRC:
-//                 printf("Boton2 encontrado...\n");
-//                 break;
-//             case TRIAN:
-//                 printf("Boton3 encontrado...\n");
-//                 break;
-//             case LINEA:
-//                 break;
-//             case CURVA:
-//                 break;    
-//         }
-//     }
-// }
-
 void eventListener(Button *button){    
     if(estadosrender.evento.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         int mx = estadosrender.evento.button.x;
@@ -99,7 +71,7 @@ Figuras* createCuad(void){
     f->cuadro.color.hex = 0xFF00FFFF;
     f->data.type = CUADRO;
 
-    desplazamientoX_total += stepX; // siguiente figura más a la derecha
+    desplazamientoX_total += stepX; // siguiente figura a la derecha
     return f;
 }
 
