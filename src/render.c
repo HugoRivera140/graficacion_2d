@@ -13,11 +13,9 @@
 #include <stdio.h>
 #include <math.h>
 
-// ==================== Estado local ====================
-vec2* punto_seleccionado = NULL;   // Vértice seleccionado para mover
+vec2* punto_seleccionado = NULL;   // Vertice seleccionado para mover
 Figuras* figura_activa = NULL;     // Figura seleccionada
 
-// ==================== Utilidades ======================
 vec2 *pivote_mas_cerca(vec2 mp, Figuras *figs, float umbral) {
     for(int i=0; i<array_size(figs); i++) {
         Figuras *f = &figs[i];
@@ -72,7 +70,6 @@ Figuras* figura_mas_cerca(vec2 mp, Figuras *figs, float umbral) {
     return NULL;
 }
 
-// ==================== Input ==========================
 void render_input() {
     int mx, my;
     switch(estadosrender.evento.type) {
@@ -124,7 +121,6 @@ void render_input() {
     }
 }
 
-// ==================== Limpieza =======================
 void clear_color_buffer() {
     for(int y=0; y<estadosrender.ven_height; y++)
         for(int x=0; x<estadosrender.ven_width; x++)
@@ -137,7 +133,7 @@ void copy_buffer_to_texture(void) {
     SDL_RenderTexture(estadosrender.renderer, estadosrender.textura, NULL, NULL);
 }
 
-// ==================== Inicialización =================
+// ==================== Inicializacion =================
 void _init(void) {
     int bttnHeight = 40;
     int bttnWidth = bttnHeight + (bttnHeight / 3);
@@ -168,7 +164,6 @@ void _init(void) {
     }
 }
 
-// ==================== Render loop ====================
 void updateFiguras(void) {
     // Botones
     for(int i=0; i<array_size(estadosrender.botones_buffer); i++){
